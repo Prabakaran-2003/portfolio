@@ -5,124 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prabakaran S | Biomedical Engineer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f8fafc;
-      color: #1f2937;
       scroll-behavior: smooth;
-    }
-    header {
-      background: #1f2937;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      color: #facc15;
-      font-size: 1.5rem;
-    }
-    nav a {
-      margin-left: 1.2rem;
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    nav a:hover {
-      border-bottom: 2px solid #facc15;
-    }
-
-    section {
-      padding: 4rem 2rem;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      background: linear-gradient(to right, #ef4444, #dc2626);
-      color: white;
-      padding: 5rem 2rem;
-    }
-    .hero-left {
-      flex: 1;
-      max-width: 600px;
-    }
-    .tagline {
-      font-size: 1.2rem;
-    }
-    .name {
-      font-size: 3rem;
-      font-weight: bold;
-      margin: 0.5rem 0;
-    }
-    .title {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-    .desc {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-    }
-    .hero-btn {
-      background: white;
-      color: #dc2626;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-    .hero-btn:hover {
-      background: #fef3c7;
-    }
-    .hero-right {
-      flex: 1;
-      text-align: center;
-    }
-    .hero-img {
-      max-width: 300px;
-      border-radius: 16px;
-      border: 5px solid white;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-    ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    footer {
-      text-align: center;
-      background: #1f2937;
-      padding: 1.5rem;
-      color: #94a3b8;
     }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <h1>Prabakaran S</h1>
     <nav>
@@ -130,12 +22,13 @@
       <a href="#about">About</a>
       <a href="#accomplishments">Accomplishments</a>
       <a href="#skills">Skills</a>
-      <a href="#quote">Quote</a>
+      <a href="#quotes">Quotes</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section id="home" class="hero">
+  <!-- Hero Section -->
+  <section id="home" class="hero visible">
     <div class="hero-left">
       <p class="tagline">I'm</p>
       <h1 class="name">Prabakaran S</h1>
@@ -151,82 +44,84 @@
     </div>
   </section>
 
+  <!-- About -->
   <section id="about">
-  <h2>About</h2>
-  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
-    <img src="about.jpg" alt="Prabakaran About" style="max-width: 300px; border-radius: 12px; border: 4px solid white;">
-    <div style="flex: 1; min-width: 250px;">
-      <p>Prabakaran S holds a Bachelor of Engineering (B.E.) in Biomedical Engineering from Kongunadu College of Engineering and Technology, Thottiyam, Tamil Nadu. With a strong academic foundation and practical exposure in biomedical systems, he is passionate about applying engineering principles to drive innovation in healthcare. 
-His academic projects include the development of a Heart Attack Detection System, a Paralysis Care System, and a Wearable Bio-Monitoring System—each aimed at enhancing clinical diagnostics and patient monitoring. He has gained valuable hands-on experience through internships at MEDVU, Retna Global Health Hospital, and Kabila Hospital, where he worked closely with hospital-grade biomedical equipment and healthcare technologies.
-Beyond academics, Prabakaran has actively participated in seminars, paper presentations, and technical workshops. He is certified in Arduino programming, electronic system design, and medical coding. His key interests lie in biomedical instrumentation and physiotherapy technologies.
-Known for his compassion, strong communication skills, and eagerness to learn, Prabakaran is committed to advancing medical technology through interdisciplinary collaboration. His goal is to contribute innovative solutions that improve patient care and healthcare efficiency.</p>
+    <h2>About</h2>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
+      <img src="about.jpg" alt="Prabakaran About" style="max-width: 300px; border-radius: 12px; border: 4px solid white;">
+      <div style="flex: 1; min-width: 250px;">
+        <p>Prabakaran S holds a Bachelor of Engineering (B.E.) in Biomedical Engineering from Kongunadu College of Engineering and Technology, Tamil Nadu. He has led multiple projects including a Heart Attack Detection System, a Paralysis Care System, and a Wearable Bio-Monitoring System. With internship experience at hospitals and certifications in Arduino and medical coding, he is passionate about building healthcare innovations that improve lives.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Accomplishments -->
   <section id="accomplishments">
-  <h2>Accomplishments</h2>
+    <h2>Accomplishments</h2>
 
-  <!-- Certifications & Achievements -->
-  <div style="margin-bottom: 2rem;">
-    <h3>Certifications & Achievements</h3>
-    <ul>
-      <li>NPTEL Certification: Enclosure Design of Electronics Equipments</li>
-      <li>Arduino Training & Medical Coding Course</li>
-      <li>2nd Place in College Hackathon for Neonatal Incubator Design</li>
-      <li>Received ₹7,500 Project Grant from TNSCST</li>
-    </ul>
-  </div>
-
-  <!-- Academic Project Timeline -->
-  <div class="timeline-container">
-
-    <div class="timeline-entry left">
-      <div class="content-box">
-        <h3>Heart Attack Detection System</h3>
-        <em>5th Semester</em>
-        <p>Designed a real-time anomaly monitoring system using a heart rate sensor and Blynk IoT platform to detect early signs of cardiac distress. The system alerts healthcare providers instantly.</p>
-      </div>
-      <div class="timeline-year">2023</div>
+    <div style="margin-bottom: 2rem;">
+      <h3>Certifications & Achievements</h3>
+      <ul>
+        <li>NPTEL Certification: Enclosure Design of Electronics Equipments</li>
+        <li>Arduino Training & Medical Coding Course</li>
+        <li>2nd Place in College Hackathon for Neonatal Incubator Design</li>
+        <li>₹7,500 Project Grant from TNSCST</li>
+      </ul>
     </div>
 
-    <div class="timeline-entry right">
-      <div class="content-box">
-        <h3>IoT-Enabled Paralysis Care</h3>
-        <em>6th Semester</em>
-        <p>Developed a system to monitor vitals in paralyzed patients using ThingSpeak and IoT sensors. It enabled remote tracking of patient conditions, ensuring timely care.</p>
-      </div>
-      <div class="timeline-year">2024</div>
-    </div>
+    <div class="timeline-container">
 
-    <div class="timeline-entry left">
-      <div class="content-box">
-        <h3>Wearable Bio-Monitoring System</h3>
-        <em>8th Semester</em>
-        <p>Created a smart wearable using textile ECG sensors for continuous health monitoring. The data is sent to a cloud server, enabling doctors to observe patient vitals remotely.</p>
+      <div class="timeline-entry left">
+        <div class="content-box">
+          <h3>Heart Attack Detection System</h3>
+          <em>5th Semester</em>
+          <p>Designed a real-time monitoring system using heart rate sensors and Blynk to detect cardiac anomalies and notify caregivers instantly.</p>
+        </div>
+        <div class="timeline-year">2023</div>
       </div>
-      <div class="timeline-year">2025</div>
-    </div>
-  </div>
-</section>
 
+      <div class="timeline-entry right">
+        <div class="content-box">
+          <h3>IoT-Enabled Paralysis Care</h3>
+          <em>6th Semester</em>
+          <p>Built an IoT-based health monitoring setup for paralyzed patients using sensors and ThingSpeak to track vitals remotely.</p>
+        </div>
+        <div class="timeline-year">2024</div>
+      </div>
+
+      <div class="timeline-entry left">
+        <div class="content-box">
+          <h3>Wearable Bio-Monitoring System</h3>
+          <em>8th Semester</em>
+          <p>Integrated textile ECG sensors into clothing to record patient vitals continuously and stream data via IoT platforms.</p>
+        </div>
+        <div class="timeline-year">2025</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Skills -->
   <section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>C Programming, Python (Basics)</li>
-    <li>Arduino, Blynk, MS Office</li>
-    <li>Empathy, Troubleshooting, Teamwork</li>
-    <li>Languages: Tamil (Native), English (Fluent)</li>
-  </ul>
-</section>
+    <h2>Skills</h2>
+    <ul>
+      <li>C Programming, Python (Basics)</li>
+      <li>Arduino, Blynk, MS Office</li>
+      <li>Empathy, Troubleshooting, Teamwork</li>
+      <li>Languages: Tamil (Native), English (Fluent)</li>
+    </ul>
+  </section>
 
+  <!-- Quotes -->
   <section id="quotes">
-  <h2>Quote</h2>
-  <blockquote>
-    “Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.”
-  </blockquote>
-  <p>– Albert Schweitzer</p>
-</section>
+    <h2>Inspiring Quote</h2>
+    <blockquote>
+      “Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.”
+    </blockquote>
+    <p>– Albert Schweitzer</p>
+  </section>
 
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:prabakaranreal2003@gmail.com">prabakaranreal2003@gmail.com</a></p>
@@ -234,24 +129,40 @@ Known for his compassion, strong communication skills, and eagerness to learn, P
     <p>LinkedIn: <a href="https://www.linkedin.com/in/prabakaran-s-5b819a265" target="_blank">linkedin.com/in/prabakaran-s</a></p>
   </section>
 
+  <!-- Footer -->
   <footer>
     &copy; 2025 Prabakaran S. All rights reserved.
   </footer>
 
+  <!-- Scroll Reveal Script -->
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section");
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll("section");
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.1 });
+
+      sections.forEach(section => observer.observe(section));
+    });
+
+    // Smooth scroll with header offset
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: "smooth"
+          });
         }
       });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => observer.observe(section));
-  });
-</script>
+    });
+  </script>
 </body>
-</html>
+                            </html>
