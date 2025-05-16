@@ -67,43 +67,34 @@ h2 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  background: radial-gradient(circle at top left, #f43f5e, #be123c);
+  background-size: cover;
+  position: relative;
+  color: white;
+  padding: 5rem 2rem;
+  overflow: hidden;
 }
 
-.hero-text {
-  max-width: 600px;
+/* Decorative angular shapes */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+              linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%);
+  background-size: 150px 150px;
+  z-index: 0;
+  transform: rotate(-10deg);
 }
 
-.hero-text h2 {
-  font-size: 2.5rem;
+.hero-left,
+.hero-right {
+  position: relative;
+  z-index: 1;
 }
-
-.hero-text h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero-text .btns a {
-  display: inline-block;
-  margin: 0.5rem 1rem 0.5rem 0;
-  padding: 0.6rem 1.2rem;
-  background: #fff;
-  color: #be123c;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.hero-text .btns a:hover {
-  background: #f3f4f6;
-}
-
-.hero-img img {
-  max-width: 280px;
-  border-radius: 10px;
-  border: 4px solid #fff;
-}
-
 /* Footer */
 footer {
   text-align: center;
