@@ -101,12 +101,15 @@ header h1 {
 }
 
 section {
-  background: #1e293b;
-  border-left: 4px solid #facc15;
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin: 2rem 0;
-  box-shadow: 0 0 10px #facc1533;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 }
 
 .skills {
