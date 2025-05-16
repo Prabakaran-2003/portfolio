@@ -1,4 +1,4 @@
-/* Reset & Base Styles */
+/* Global Reset and Fonts */
 * {
   margin: 0;
   padding: 0;
@@ -35,11 +35,23 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  transition: border-bottom 0.3s ease;
 }
 
 nav a:hover {
   border-bottom: 2px solid #facc15;
+}
+
+/* Section Fade-In Animation */
+section {
+  padding: 4rem 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Hero Section */
@@ -56,31 +68,6 @@ nav a:hover {
 .hero-left {
   flex: 1;
   max-width: 600px;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1s ease-out forwards;
-  animation-delay: 0.2s;
-}
-
-.hero-right {
-  flex: 1;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1s ease-out forwards;
-  animation-delay: 0.4s;
-}
-
-.hero.visible .hero-left,
-.hero.visible .hero-right {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hero-img {
-  max-width: 300px;
-  border-radius: 16px;
-  border: 5px solid white;
 }
 
 .tagline {
@@ -115,32 +102,24 @@ nav a:hover {
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
-  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .hero-btn:hover {
   background: #fef3c7;
-  transform: translateY(-2px);
 }
 
-/* Sections */
-section {
-  padding: 4rem 2rem;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+.hero-right {
+  flex: 1;
+  text-align: center;
 }
 
-section.visible {
-  animation: fadeUp 0.8s ease-out forwards;
+.hero-img {
+  max-width: 300px;
+  border-radius: 16px;
+  border: 5px solid white;
 }
 
-h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* Lists */
+/* Basic Content Styles */
 ul {
   padding-left: 1.5rem;
 }
@@ -149,7 +128,6 @@ ul li {
   margin-bottom: 0.5rem;
 }
 
-/* Footer */
 footer {
   text-align: center;
   background: #1f2937;
@@ -157,42 +135,117 @@ footer {
   color: #94a3b8;
 }
 
-/* Fade-Up Animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Timeline Section */
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
-/* Responsive Tweaks */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #dc2626;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-entry {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.timeline-entry.left {
+  left: 0;
+}
+
+.timeline-entry.right {
+  left: 50%;
+}
+
+.content-box {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #dc2626;
+  border-radius: 50%;
+  top: 20px;
+  z-index: 1;
+}
+
+.timeline-entry.left::before {
+  right: -10px;
+}
+
+.timeline-entry.right::before {
+  left: -10px;
+}
+
+.timeline-year {
+  position: absolute;
+  top: 20px;
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.timeline-entry.left .timeline-year {
+  right: -50px;
+}
+
+.timeline-entry.right .timeline-year {
+  left: -50px;
+}
+
+.content-box h3 {
+  color: #dc2626;
+  margin-bottom: 0.3rem;
+}
+
+.content-box em {
+  font-style: italic;
+  color: #6b7280;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Timeline */
+@media screen and (max-width: 768px) {
+  .timeline-container::after {
+    left: 8px;
   }
 
-  .hero-left,
-  .hero-right {
-    animation-delay: 0s;
+  .timeline-entry {
+    width: 100%;
+    padding-left: 2.5rem;
+    padding-right: 0;
+    margin-bottom: 2rem;
   }
 
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
+  .timeline-entry.right {
+    left: 0;
   }
 
-  nav a {
-    margin: 0.5rem;
+  .timeline-entry::before {
+    left: 0;
   }
 
-  .hero-buttons {
-    justify-content: center;
+  .timeline-entry .timeline-year {
+    left: -40px;
   }
 }
