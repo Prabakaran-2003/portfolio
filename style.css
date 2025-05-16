@@ -1,4 +1,4 @@
-/* Reset and Base */
+/* Base */
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +10,17 @@ body {
   background: #f8fafc;
   color: #1f2937;
   scroll-behavior: smooth;
+}
+
+/* Scroll Progress Bar */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: linear-gradient(to right, #facc15, #dc2626);
+  width: 0%;
+  z-index: 2000;
 }
 
 /* Header */
@@ -54,7 +65,7 @@ section.visible {
   transform: translateY(0);
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -102,7 +113,6 @@ section.visible {
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
-  transition: background 0.3s ease;
 }
 
 .hero-btn:hover {
@@ -120,16 +130,96 @@ section.visible {
   border: 5px solid white;
 }
 
-/* Section Content */
-ul {
-  padding-left: 1.5rem;
+/* Timeline */
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
-ul li {
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #dc2626;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-entry {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.timeline-entry.left {
+  left: 0;
+}
+
+.timeline-entry.right {
+  left: 50%;
+}
+
+.content-box {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #dc2626;
+  border-radius: 50%;
+  top: 20px;
+  z-index: 1;
+}
+
+.timeline-entry.left::before {
+  right: -10px;
+}
+
+.timeline-entry.right::before {
+  left: -10px;
+}
+
+.timeline-year {
+  position: absolute;
+  top: 20px;
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.timeline-entry.left .timeline-year {
+  right: -50px;
+}
+
+.timeline-entry.right .timeline-year {
+  left: -50px;
+}
+
+.content-box h3 {
+  color: #dc2626;
+  margin-bottom: 0.3rem;
+}
+
+.content-box em {
+  font-style: italic;
+  color: #6b7280;
+  display: block;
   margin-bottom: 0.5rem;
 }
 
-/* Quote Section */
+/* Quotes */
 #quotes {
   background: linear-gradient(to right, #f43f5e, #d946ef);
   color: white;
@@ -162,3 +252,31 @@ footer {
   padding: 1.5rem;
   color: #94a3b8;
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .timeline-container::after {
+    left: 8px;
+  }
+
+  .timeline-entry {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 2.5rem;
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-entry::before {
+    left: 0;
+  }
+
+  .timeline-entry .timeline-year {
+    left: -40px;
+  }
+  }
