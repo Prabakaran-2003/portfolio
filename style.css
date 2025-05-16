@@ -101,14 +101,12 @@ header h1 {
 }
 
 section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+  margin: 2rem 0;
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(250, 204, 21, 0.1);
+  transition: transform 0.3s ease;
 }
 }
 
