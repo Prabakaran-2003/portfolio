@@ -1,23 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>$1
-  <script>
-  const sections = document.querySelectorAll("section");
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prabakaran S | Biomedical Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #1f2937;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      color: #facc15;
+      font-size: 1.5rem;
+    }
+    nav a {
+      margin-left: 1.2rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      border-bottom: 2px solid #facc15;
+    }
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  }, {
-    threshold: 0.2
-  });
+    section {
+      padding: 4rem 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-  sections.forEach(section => {
-    observer.observe(section);
-  });
-</script>
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to right, #ef4444, #dc2626);
+      color: white;
+      padding: 5rem 2rem;
+    }
+    .hero-left {
+      flex: 1;
+      max-width: 600px;
+    }
+    .tagline {
+      font-size: 1.2rem;
+    }
+    .name {
+      font-size: 3rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+    .title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .desc {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+    .hero-btn {
+      background: white;
+      color: #dc2626;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .hero-btn:hover {
+      background: #fef3c7;
+    }
+    .hero-right {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-img {
+      max-width: 300px;
+      border-radius: 16px;
+      border: 5px solid white;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      background: #1f2937;
+      padding: 1.5rem;
+      color: #94a3b8;
+    }
+  </style>
+</head>
 <body>
   <header>
     <h1>Prabakaran S</h1>
@@ -32,28 +136,28 @@
   </header>
 
   <section id="home" class="hero">
-    <div class="hero-text">
-      <p style="font-size: 1.2rem;">I'm</p>
-      <h2>Prabakaran S</h2>
-      <h3>Biomedical Engineer</h3>
-      <p class="subtitle">And lots more...</p>
-      <div class="btns">
-        <a href="Prabakaran_Resume.pdf" download>Resume</a>
-        <a href="mailto:prabakaranreal2003@gmail.com">Email Me</a>
+    <div class="hero-left">
+      <p class="tagline">I'm</p>
+      <h1 class="name">Prabakaran S</h1>
+      <h2 class="title">Biomedical Engineer</h2>
+      <p class="desc">and passionate about innovating healthcare...</p>
+      <div class="hero-buttons">
+        <a href="Prabakaran_Resume.pdf" download class="hero-btn">Resume</a>
+        <a href="mailto:prabakaranreal2003@gmail.com" class="hero-btn">Email</a>
       </div>
     </div>
-    <div class="hero-img">
-      <img src="profile.jpg" alt="Prabakaran S">
+    <div class="hero-right">
+      <img src="profile.jpg" alt="Prabakaran S" class="hero-img">
     </div>
   </section>
 
   <section id="about">
     <h2>About</h2>
     <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
-      <img src="9352c8e1-d8b7-4dc2-9c90-7bee735718eb.jpg" alt="Prabakaran About" style="max-width: 300px; border-radius: 12px; border: 4px solid white;">
+      <img src="about.jpg" alt="Prabakaran About" style="max-width: 300px; border-radius: 12px; border: 4px solid white;">
       <div style="flex: 1; min-width: 250px;">
-        <p>Prabakaran S holds a Bachelor's degree in Biomedical Engineering from Kongunadu College of Engineering and Technology, Tamil Nadu. With a strong foundation in biomedical systems and a commitment to innovation, he has developed multiple academic projects, including a Heart Attack Detection System, a Paralysis Care System, and a Wearable Bio-Monitoring System. His practical knowledge is further enriched by internships at MEDVU, Retna Global Health Hospital, and Kabila Hospital, where he worked closely with biomedical devices and healthcare technologies.</p>
-        <p>Beyond academics, he has actively participated in technical workshops, seminars, and paper presentations. He has received certifications in Arduino programming, electronic design, and medical coding. His core interests lie in biomedical instrumentation and physiotherapy technologies. Prabakaran is known for his compassion, excellent communication skills, and a strong desire to learn. He is dedicated to advancing healthcare through innovative engineering solutions and collaborative development.</p>
+        <p>Prabakaran S holds a Bachelor's degree in Biomedical Engineering from Kongunadu College of Engineering and Technology, Tamil Nadu. He has worked on innovative academic projects such as Heart Attack Detection System, IoT Paralysis Care, and a Wearable Bio-Monitoring System.</p>
+        <p>He gained hands-on experience from internships at Medvu, Retna Global Hospital, and Kabila Hospital. Certified in Arduino, electronics, and medical coding, Prabakaran blends technical skill with empathy and communication to improve healthcare through technology.</p>
       </div>
     </div>
   </section>
@@ -65,11 +169,11 @@
       <li>Arduino & Medical Coding Training</li>
       <li>2nd Place – College Hackathon (Neonatal Incubator)</li>
       <li>₹7,500 Project Grant from TNSCST</li>
-      <li>Academic Projects:</li>
+      <li><strong>Projects:</strong></li>
       <ul>
-        <li><strong>Heart Attack Detection System:</strong> Real-time monitoring using Blynk and heart rate sensors.</li>
-        <li><strong>IoT-Enabled Paralysis Care System:</strong> Monitors paralyzed patients using vital sensors and ThingSpeak.</li>
-        <li><strong>Wearable Bio-Monitoring System:</strong> Uses textile ECG sensors for continuous vitals tracking.</li>
+        <li>Heart Attack Detection System – Blynk + Heart rate sensor</li>
+        <li>IoT Enabled Paralysis Care – ThingSpeak + Sensor</li>
+        <li>Wearable Bio-Monitoring System – Textile ECG sensors</li>
       </ul>
     </ul>
   </section>
@@ -78,7 +182,7 @@
     <h2>Skills</h2>
     <ul>
       <li>C Programming, Python (Basics)</li>
-      <li>Arduino, Blynk, MS Word & PowerPoint</li>
+      <li>Arduino, Blynk, MS Office</li>
       <li>Empathy, Troubleshooting, Teamwork</li>
       <li>Languages: Tamil (Native), English (Fluent)</li>
     </ul>
@@ -87,22 +191,41 @@
   <section id="quotes">
     <h2>Quotes</h2>
     <blockquote style="font-size: 1.2rem; font-style: italic;">
-      "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful."
+      "Success is not the key to happiness. Happiness is the key to success."
     </blockquote>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>You can reach me through the following links:</p>
-    <ul>
-      <li>Email: <a href="mailto:prabakaranreal2003@gmail.com" style="color:#fff; text-decoration:underline;">prabakaranreal2003@gmail.com</a></li>
-      <li>Phone: <a href="tel:+919578234831" style="color:#fff; text-decoration:underline;">+91 95782 34831</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/prabakaran-s-5b819a265" target="_blank" style="color:#fff; text-decoration:underline;">linkedin.com/in/prabakaran-s</a></li>
-    </ul>
+    <p>Email: <a href="mailto:prabakaranreal2003@gmail.com">prabakaranreal2003@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919578234831">+91 95782 34831</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/prabakaran-s-5b819a265" target="_blank">linkedin.com/in/prabakaran-s</a></p>
   </section>
 
   <footer>
     &copy; 2025 Prabakaran S. All rights reserved.
   </footer>
+
+  <script>
+    const sections = document.querySelectorAll(\"section\");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(\"visible\");
+        }
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
+
+    document.querySelectorAll(\"nav a\").forEach(link => {
+      link.addEventListener(\"click\", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute(\"href\"));
+        if (target) {
+          window.scrollTo({ top: target.offsetTop - 60, behavior: \"smooth\" });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
