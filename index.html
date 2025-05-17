@@ -59,12 +59,13 @@
   <!-- Accomplishments -->
   <section id="accomplishments">
     <h2>Accomplishments</h2>
-    <div class="certifications">
-      <h3>Certifications</h3>
+    <div class="certifications & Activities">
+      <h3>Certifications & Activities</h3>
       <ul>
         <li>NPTEL Certification: Enclosure Design of Electronics Equipments</li>
         <li>Value Added Course: Biomedical Hardware Training, Medical Coding</li>
         <li>Spoken Tutorial: Arduino, Biopython, Java, Introduction to Computers</li>
+        <li>Guvi: Data Visualization, Deep Learning, Machine Learning, Python zero to hero</li>
       </ul>
 
       <!-- Paper Presentations Button -->
@@ -103,6 +104,12 @@
     </div>
   </div>
 </div>
+
+<ul>
+  <li>Industrial Visits: Prashan Medical Technologies(Coimbatore), Atheenapandian.pvt.ltd(Courtallam), Pasteur institute training(Coonoor), KMCH Hospital(Coimbatore), Velammal ospital(Madurai)</li>
+  <li>Participated in 8km Mini Marathon</li>
+  <li>Attended a Workshps, Seminars and Webinars</li>
+</ul>
 
     <h3 style="text-align: center;">Projects Timeline 2021-2025</h3>
     <div class="timeline-container">
@@ -278,17 +285,17 @@
           setTimeout(typeLoop, 100);
         } else {
           typing = false;
-          setTimeout(typeLoop, 1000);
+          setTimeout(typeLoop, 100);
         }
       } else {
         if (charIndex > 0) {
           typedText.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
           charIndex--;
-          setTimeout(typeLoop, 30);
+          setTimeout(typeLoop, 0);
         } else {
           typing = true;
           phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(typeLoop, 300);
+          setTimeout(typeLoop, 100);
         }
       }
     }
@@ -406,6 +413,45 @@
   window.onclick = (e) => {
     if (e.target == internshipModal) {
       internshipModal.style.display = "none";
+    }
+  };
+</script>
+
+<script>
+  // Conference Modal
+  const conferenceModal = document.getElementById("conferenceModal");
+  const openConferenceBtn = document.getElementById("openConferenceBtn");
+  const closeConferenceBtn = document.getElementById("closeConferenceBtn");
+  const confSlides = document.querySelectorAll(".conf-slide");
+  let confIndex = 0;
+
+  function showConfSlide(index) {
+    confSlides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      slide.style.display = "none";
+    });
+    confSlides[index].classList.add("active");
+    confSlides[index].style.display = "block";
+  }
+
+  function moveConfSlide(dir) {
+    confIndex = (confIndex + dir + confSlides.length) % confSlides.length;
+    showConfSlide(confIndex);
+  }
+
+  openConferenceBtn.onclick = () => {
+    conferenceModal.style.display = "block";
+    confIndex = 0;
+    showConfSlide(confIndex);
+  };
+
+  closeConferenceBtn.onclick = () => {
+    conferenceModal.style.display = "none";
+  };
+
+  window.onclick = (e) => {
+    if (e.target == conferenceModal) {
+      conferenceModal.style.display = "none";
     }
   };
 </script>
