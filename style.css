@@ -1,4 +1,4 @@
-/* Base */
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Scroll Progress Bar */
+/* Progress Bar */
 #progress-bar {
   position: fixed;
   top: 0;
@@ -52,7 +52,7 @@ nav a:hover {
   border-bottom: 2px solid #facc15;
 }
 
-/* Section animations */
+/* Section Animation */
 section {
   padding: 4rem 2rem;
   opacity: 0;
@@ -65,7 +65,7 @@ section.visible {
   transform: translateY(0);
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -119,6 +119,7 @@ section.visible {
 .hero-buttons {
   display: flex;
   gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .hero-btn {
@@ -128,6 +129,9 @@ section.visible {
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
 }
 
 .hero-btn:hover {
@@ -145,7 +149,7 @@ section.visible {
   border: 5px solid white;
 }
 
-/* About */
+/* About Section */
 .about-content {
   display: flex;
   flex-wrap: wrap;
@@ -190,21 +194,8 @@ section.visible {
   box-sizing: border-box;
 }
 
-.timeline-entry.left {
-  left: 0;
-}
-
-.timeline-entry.right {
-  left: 50%;
-}
-
-.content-box {
-  background: #fff;
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  position: relative;
-}
+.timeline-entry.left { left: 0; }
+.timeline-entry.right { left: 50%; }
 
 .timeline-entry::before {
   content: '';
@@ -217,13 +208,8 @@ section.visible {
   z-index: 1;
 }
 
-.timeline-entry.left::before {
-  right: -10px;
-}
-
-.timeline-entry.right::before {
-  left: -10px;
-}
+.timeline-entry.left::before { right: -10px; }
+.timeline-entry.right::before { left: -10px; }
 
 .timeline-year {
   position: absolute;
@@ -233,12 +219,15 @@ section.visible {
   font-size: 0.9rem;
 }
 
-.timeline-entry.left .timeline-year {
-  right: -50px;
-}
+.timeline-entry.left .timeline-year { right: -50px; }
+.timeline-entry.right .timeline-year { left: -50px; }
 
-.timeline-entry.right .timeline-year {
-  left: -50px;
+.content-box {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  position: relative;
 }
 
 .content-box h3 {
@@ -261,9 +250,9 @@ section.visible {
   color: #374151;
 }
 
-/* Quotes */
+/* Quotes Section */
 .quote-section {
-  background: linear-gradient(135deg, #1e3a8a, #9333ea);
+  background: linear-gradient(135deg, #ef4444, #dc2626);
   color: #fff;
   padding: 5rem 2rem;
   text-align: center;
@@ -307,7 +296,7 @@ section.visible {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Contact */
+/* Contact Section */
 #contact {
   text-align: center;
 }
@@ -332,6 +321,82 @@ section.visible {
 .social-icons a:hover {
   background-color: #facc15;
   color: #1f2937;
+}
+
+/* Modal Certificate Slider */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 700px;
+  position: relative;
+}
+
+.modal-slider {
+  position: relative;
+  text-align: center;
+}
+
+.cert-slide {
+  display: none;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.cert-slide.active {
+  display: block;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 0.5rem 1rem;
+  margin-top: -22px;
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+  background: #facc15;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #dc2626;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 /* Footer */
@@ -375,5 +440,9 @@ footer {
 
   .about-content img {
     margin: 0 auto;
+  }
+
+  .quote-slide {
+    font-size: 1.4rem;
   }
 }
