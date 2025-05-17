@@ -176,8 +176,8 @@
 
     // Typing animation for description
     const phrases = [
-      "A passionate and dedicated Biomedical Engineering graduate...",
-      "Seeking to work in a growth-oriented environment...",
+      "A passionate and dedicated Biomedical Engineering graduate",
+      "Seeking to work in a growth-oriented environment",
       "Applying my technical skills to healthcare innovation.",
       "Committed to improving lives through technology."
     ];
@@ -194,17 +194,7 @@
           typing = false;
           setTimeout(typeLoop, 1800);
         }
-      } else {
-        if (charIndex > 0) {
-          typedText.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
-          charIndex--;
-          setTimeout(typeLoop, 40);
-        } else {
-          typing = true;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(typeLoop, 500);
-        }
-      }
+      } 
     }
     document.addEventListener("DOMContentLoaded", typeLoop);
 
