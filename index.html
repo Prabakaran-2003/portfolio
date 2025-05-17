@@ -205,25 +205,42 @@
     });
   </script>
   <script>
-  const text = "A passionate and dedicated Biomedical Engineering graduate seeking to work in a growth-oriented environment where I can apply my technical skills and knowledge to contribute to innovative healthcare solutions.";
-  const typingElement = document.getElementById("typing-text");
-  let index = 0;
+  const phrases = [
+    "A passionate and dedicated Biomedical Engineering graduate...",
+    "Seeking to innovate in healthcare through technology.",
+    "Skilled in Arduino, Python, and medical systems.",
+    "Always eager to learn and grow in the field."
+  ];
 
-  function typeText() {
-    if (index < text.length) {
-      typingElement.textContent += text.charAt(index);
-      index++;
-      setTimeout(typeText, 35); // Speed of typing
+  const el = document.getElementById("animated-text");
+  let index = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+    const current = phrases[index];
+    const visible = current.substring(0, charIndex);
+    el.textContent = visible;
+
+    if (!isDeleting) {
+      charIndex++;
+      if (charIndex > current.length) {
+        isDeleting = true;
+        setTimeout(type, 1500); // Pause before deleting
+        return;
+      }
     } else {
-      setTimeout(() => {
-        typingElement.textContent = "";
-        index = 0;
-        typeText(); // Restart loop
-      }, 2500); // Pause before looping
+      charIndex--;
+      if (charIndex === 0) {
+        isDeleting = false;
+        index = (index + 1) % phrases.length;
+      }
     }
+
+    setTimeout(type, isDeleting ? 50 : 100);
   }
 
-  document.addEventListener("DOMContentLoaded", typeText);
+  document.addEventListener("DOMContentLoaded", type);
 </script>
 </body>
 </html>
