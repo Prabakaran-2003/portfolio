@@ -105,6 +105,22 @@
   </div>
 </div>
 
+<!-- View Conferences Button -->
+<button id="openConferenceBtn" class="hero-btn">View Conferences</button>
+
+<!-- Conference Modal -->
+<div id="conferenceModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeConferenceBtn">&times;</span>
+    <div class="modal-slider">
+      <img src="cert9.jpg" class="conf-slide" />
+      <img src="cert10.jpg" class="conf-slide" />
+      <button class="prev" onclick="moveConfSlide(-1)">❮</button>
+      <button class="next" onclick="moveConfSlide(1)">❯</button>
+    </div>
+  </div>
+</div>
+
 <ul>
   <li>Industrial Visits: Prashan Medical Technologies(Coimbatore), Atheenapandian.pvt.ltd(Courtallam), Pasteur institute training(Coonoor), KMCH Hospital(Coimbatore), Velammal ospital(Madurai)</li>
   <li>Participated in 8km Mini Marathon</li>
@@ -413,6 +429,45 @@
   window.onclick = (e) => {
     if (e.target == internshipModal) {
       internshipModal.style.display = "none";
+    }
+  };
+</script>
+
+<script>
+  // Conference Modal
+  const conferenceModal = document.getElementById("conferenceModal");
+  const openConferenceBtn = document.getElementById("openConferenceBtn");
+  const closeConferenceBtn = document.getElementById("closeConferenceBtn");
+  const confSlides = document.querySelectorAll(".conf-slide");
+  let confIndex = 0;
+
+  function showConfSlide(index) {
+    confSlides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      slide.style.display = "none";
+    });
+    confSlides[index].classList.add("active");
+    confSlides[index].style.display = "block";
+  }
+
+  function moveConfSlide(dir) {
+    confIndex = (confIndex + dir + confSlides.length) % confSlides.length;
+    showConfSlide(confIndex);
+  }
+
+  openConferenceBtn.onclick = () => {
+    conferenceModal.style.display = "block";
+    confIndex = 0;
+    showConfSlide(confIndex);
+  };
+
+  closeConferenceBtn.onclick = () => {
+    conferenceModal.style.display = "none";
+  };
+
+  window.onclick = (e) => {
+    if (e.target == conferenceModal) {
+      conferenceModal.style.display = "none";
     }
   };
 </script>
