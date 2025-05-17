@@ -190,5 +190,26 @@
       });
     });
   </script>
+  <script>
+  const text = "A passionate and dedicated Biomedical Engineering graduate seeking to work in a growth-oriented environment where I can apply my technical skills and knowledge to contribute to innovative healthcare solutions.";
+  const typingElement = document.getElementById("typing-text");
+  let index = 0;
+
+  function typeText() {
+    if (index < text.length) {
+      typingElement.textContent += text.charAt(index);
+      index++;
+      setTimeout(typeText, 35); // Speed of typing
+    } else {
+      setTimeout(() => {
+        typingElement.textContent = "";
+        index = 0;
+        typeText(); // Restart loop
+      }, 2500); // Pause before looping
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", typeText);
+</script>
 </body>
 </html>
