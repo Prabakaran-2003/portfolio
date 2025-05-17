@@ -199,11 +199,11 @@
         if (charIndex > 0) {
           typedText.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
           charIndex--;
-          setTimeout(typeLoop, 40);
+          setTimeout(typeLoop, 5);
         } else {
           typing = true;
           phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(typeLoop, 50);
+          setTimeout(typeLoop, 500);
         }
       }
     }
