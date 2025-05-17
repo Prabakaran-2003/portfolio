@@ -194,7 +194,18 @@
           typing = false;
           setTimeout(typeLoop, 1800);
         }
-      } 
+      }
+      else {
+        if (charIndex > 0) {
+          typedText.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(typeLoop, 40);
+        } else {
+          typing = true;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(typeLoop, 500);
+        }
+      }
     }
     document.addEventListener("DOMContentLoaded", typeLoop);
 
