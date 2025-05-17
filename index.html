@@ -87,6 +87,23 @@
       </div>
     </div>
 
+    <!-- View Internships Button -->
+<button id="openInternshipBtn" class="hero-btn">View Internships</button>
+
+<!-- Internship Modal -->
+<div id="internshipModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeInternshipBtn">&times;</span>
+    <div class="modal-slider">
+      <img src="cert6.jpeg" class="intern-slide" />
+      <img src="cert7.jpeg" class="intern-slide" />
+      <img src="cert8.jpeg" class="intern-slide" />
+      <button class="prev" onclick="moveInternSlide(-1)">❮</button>
+      <button class="next" onclick="moveInternSlide(1)">❯</button>
+    </div>
+  </div>
+</div>
+
     <h3 style="text-align: center;">Projects Timeline 2021-2025</h3>
     <div class="timeline-container">
       <div class="timeline-entry left">
@@ -327,6 +344,71 @@
       }
     };
   </script>
+
+<script>
+  // Internship Slider Logic
+  const internshipSlider = document.getElementById("internshipSlider");
+  const internshipImages = internshipSlider.querySelectorAll("img");
+  let internshipIndex = 0;
+
+  document.getElementById("showInternshipBtn").addEventListener("click", () => {
+    internshipSlider.classList.remove("hidden");
+    internshipImages.forEach(img => img.classList.remove("active"));
+    internshipImages[0].classList.add("active");
+    internshipIndex = 0;
+  });
+
+  function moveSlideInternship(n) {
+    internshipImages[internshipIndex].classList.remove("active");
+    internshipIndex = (internshipIndex + n + internshipImages.length) % internshipImages.length;
+    internshipImages[internshipIndex].classList.add("active");
+  }
+
+  // Activate first image by default in both sliders
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("#certificateSlider img")?.classList.add("active");
+    document.querySelector("#internshipSlider img")?.classList.add("active");
+  });
+</script>
+
+<script>
+  // Internship Modal
+  const internshipModal = document.getElementById("internshipModal");
+  const openInternBtn = document.getElementById("openInternshipBtn");
+  const closeInternBtn = document.getElementById("closeInternshipBtn");
+  const internSlides = document.querySelectorAll(".intern-slide");
+  let internIndex = 0;
+
+  function showInternSlide(index) {
+    internSlides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      slide.style.display = "none";
+    });
+    internSlides[index].classList.add("active");
+    internSlides[index].style.display = "block";
+  }
+
+  function moveInternSlide(dir) {
+    internIndex = (internIndex + dir + internSlides.length) % internSlides.length;
+    showInternSlide(internIndex);
+  }
+
+  openInternBtn.onclick = () => {
+    internshipModal.style.display = "block";
+    internIndex = 0;
+    showInternSlide(internIndex);
+  };
+
+  closeInternBtn.onclick = () => {
+    internshipModal.style.display = "none";
+  };
+
+  window.onclick = (e) => {
+    if (e.target == internshipModal) {
+      internshipModal.style.display = "none";
+    }
+  };
+</script>
 
 </body>
 </html>
