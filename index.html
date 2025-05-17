@@ -51,9 +51,7 @@
     <div class="about-content">
       <img src="about.jpg" alt="Prabakaran About" />
       <div>
-        <p>
-          Prabakaran S holds a B.E. in Biomedical Engineering from Kongunadu College of Engineering and Technology, Tamil Nadu. He’s developed projects like a Heart Attack Detection System, Paralysis Care System, and a Wearable Bio-Monitoring System. Through hospital internships and certifications in Arduino, medical coding, and design, he’s committed to building health-focused engineering solutions.
-        </p>
+        <p>I am Prabakaran S, a Biomedical Engineering graduate from Kongunadu College of Engineering and Technology. Passionate about blending engineering and healthcare, I’ve worked on projects like a Heart Attack Detection System, IoT-based Paralysis Care, and a Wearable Bio-Monitoring T-shirt. My hands-on experience through hospital internships and certifications in Arduino, biomedical hardware, and medical coding has strengthened my technical expertise. I am a quick learner, dedicated team player, and effective communicator. My goal is to contribute to innovative healthcare solutions that enhance patient care and medical efficiency through technology-driven research and development.</p>
       </div>
     </div>
   </section>
@@ -62,43 +60,97 @@
   <section id="accomplishments">
     <h2>Accomplishments</h2>
     <div class="certifications">
-      <h3>Certifications & Achievements</h3>
+      <h3>Certifications</h3>
       <ul>
         <li>NPTEL Certification: Enclosure Design of Electronics Equipments</li>
-        <li>Arduino Training & Medical Coding Course</li>
-        <li>2nd Place in College Hackathon – Neonatal Incubator</li>
-        <li>₹7,500 Project Grant from TNSCST</li>
+        <li>Value Added Course: Biomedical Hardware Training, Medical Coding</li>
+        <li>Spoken Tutorial: Arduino, Biopython, Java, Introduction to Computers</li>
       </ul>
+
+      <!-- Paper Presentations Button -->
+      <button id="openModalBtn" class="hero-btn">View Paper Presentations</button>
     </div>
 
+    <!-- Modal Slider for Certificates -->
+    <div id="certificateModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <div class="modal-slider">
+          <img src="cert1.jpg" class="cert-slide" />
+          <img src="cert2.jpg" class="cert-slide" />
+          <img src="cert3.jpg" class="cert-slide" />
+          <img src="cert4.jpeg" class="cert-slide" />
+          <img src="cert5.jpeg" class="cert-slide" />
+          <button class="prev" onclick="moveCertSlide(-1)">❮</button>
+          <button class="next" onclick="moveCertSlide(1)">❯</button>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="text-align: center;">Projects Timeline 2021-2025</h3>
     <div class="timeline-container">
       <div class="timeline-entry left">
-        <div class="content-box">
-          <h3>Heart Attack Detection System</h3>
-          <em>5th Semester</em>
-          <p>Real-time monitoring system using heart rate sensor + Blynk to detect anomalies and alert caregivers instantly.</p>
-        </div>
-        <div class="timeline-year">2023</div>
-      </div>
-
-      <div class="timeline-entry right">
-        <div class="content-box">
-          <h3>IoT-Enabled Paralysis Care</h3>
-          <em>6th Semester</em>
-          <p>Vital monitoring for paralyzed patients using sensors and ThingSpeak platform to support continuous care.</p>
-        </div>
-        <div class="timeline-year">2024</div>
-      </div>
-
-      <div class="timeline-entry left">
-        <div class="content-box">
-          <h3>Wearable Bio-Monitoring System</h3>
-          <em>8th Semester</em>
-          <p>IoT-connected wearable with textile ECG sensors for 24/7 vitals tracking and rehabilitation support.</p>
-        </div>
-        <div class="timeline-year">2025</div>
-      </div>
+    <div class="content-box">
+      <h3>Project Expo</h3>
+      <h4><em>scientism'22</em>Department of Science and Humanities, 2022</h4>
+      <p>Inductive coil transmitters use magnetic fields between two coils to wirelessly transfer power. Efficient at short distances, they're used in wireless chargers and low-power RF systems.</p>
     </div>
+    <div class="timeline-year">2022</div>
+  </div>
+      
+        <div class="timeline-entry right">
+          <div class="content-box">
+            <h3>Heart Attack Detection System</h3>
+            <em>5th Semester</em>
+            <p>Heart rate sensor + Blynk</p>
+            <p>The “Heart attack detection system” is to monitor heart activity continuously and detect anomalies indicating a potential heart attack.</p>
+          </div>
+          <div class="timeline-year">2023</div>
+        </div>
+  
+        <div class="timeline-entry left">
+          <div class="content-box">
+            <h3>IoT-Enabled Paralysis Care</h3>
+            <em>6th Semester</em>
+            <p>Heart rate Sensor + Temperature sensor + Think speak</p>
+            <p>The “IoT enabled paralysis care” is to enhance patient care by using IoT devices to monitor vital signs and environmental conditions.</p>
+          </div>
+          <div class="timeline-year">2024</div>
+        </div>
+  
+  <div class="timeline-entry right">
+    <div class="content-box">
+      <h3>2nd Place – College Hackathon</h3>
+      <h4>Department of Biomedical Engineering, 2024</h4>
+      <p>Secured 2nd place in a college-level hackathon organized by the Department of Biomedical Engineering. 
+        Presented an innovative design of a <strong>Neonatal Incubator</strong> with integrated sensors to 
+        maintain optimal temperature and monitor vital signs. The solution was aimed at reducing infant mortality 
+        through low-cost, efficient neonatal care.</p>
+    </div>
+    <div class="timeline-year">2024</div>
+  </div>
+  
+        <div class="timeline-entry left">
+          <div class="content-box">
+            <h3>Wearable Bio-Monitoring System</h3>
+            <em>8th Semester</em>
+            <p>SpO2 Sensor + Temperature Sensor + ECG Sensor + IoT Remote</p>
+            <p>The “Bio-Monitoring T-Shirt” is to provide continuous, real-time monitoring of vital signs using textile electrodes and IoT, ensuring accurate health tracking, comfort, and timely alerts.</p>
+          </div>
+          <div class="timeline-year">2025</div>
+        </div>
+  
+  <div class="timeline-entry right">
+    <div class="content-box">
+      <h3>₹7,500 Project Grant – TNSCST</h3>
+      <h4>Innovation Grant for Biomedical Research, 2025</h4>
+      <p>Received a research grant of ₹7,500 from the <strong>Tamil Nadu State Council for Science and Technology (TNSCST)</strong> 
+        for a project titled <em>"Prevention of Chemotherapy-Induced Alopecia Using Scalp Cooling Helmet."</em> 
+        The project aimed to develop an affordable cooling system to reduce hair loss during chemotherapy, 
+        enhancing patient comfort and emotional well-being during cancer treatment.</p>
+    </div>
+    <div class="timeline-year">2025</div>
+  </div>
   </section>
 
   <!-- Skills -->
@@ -124,10 +176,26 @@
     </div>
   </section>
 
+  <!-- Message Me Box -->
+<section id="message" style="background:#f3f4f6; padding: 4rem 2rem; text-align: center;">
+  <h2 style="color:#dc2626; margin-bottom: 2rem;">Message Me</h2>
+  <form action="https://formsubmit.co/prabakarankncet@gmail.com" method="POST" style="max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 1.2rem;">
+    <input type="text" name="name" placeholder="Your Name" required style="padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;">
+    <input type="text" name="contact" placeholder="Mobile or Email" required style="padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;">
+    <textarea name="message" placeholder="Type Your Message here" required style="padding: 0.8rem; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; min-height: 120px;"></textarea>
+    
+    <!-- Optional: prevent spam bots -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    
+    <button type="submit" style="background: #dc2626; color: white; border: none; padding: 0.8rem; font-size: 1rem; border-radius: 6px; cursor: pointer;">Send</button>
+  </form>
+</section>
+
   <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>You can connect with me on:</p>
+    <p>You can also connect with me on:</p>
     <div class="social-icons">
       <a href="mailto:prabakaranreal2003@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/prabakaran-s-5b819a265" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -138,6 +206,7 @@
   <!-- Footer -->
   <footer>&copy; 2025 Prabakaran S. All rights reserved.</footer>
 
+  <!-- Scripts -->
   <script>
     // Scroll reveal
     document.addEventListener("DOMContentLoaded", function () {
@@ -152,7 +221,7 @@
       sections.forEach(section => observer.observe(section));
     });
 
-    // Scroll progress bar
+    // Scroll progress
     window.addEventListener("scroll", () => {
       const scrollTop = window.scrollY;
       const docHeight = document.body.scrollHeight - window.innerHeight;
@@ -160,7 +229,7 @@
       document.getElementById("progress-bar").style.width = scrollPercent + "%";
     });
 
-    // Smooth scroll with offset
+    // Smooth scroll
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -174,12 +243,12 @@
       });
     });
 
-    // Typing animation for description
+    // Typing animation
     const phrases = [
       "A passionate and dedicated Biomedical Engineering graduate",
-      "Seeking to work in a growth-oriented environment",
-      "Applying my technical skills to healthcare innovation.",
-      "Committed to improving lives through technology."
+      "seeking to work in a growth-oriented environment",
+      "where I can apply my technical skills",
+      "and contribute to healthcare innovations"
     ];
     const typedText = document.getElementById("typed-text");
     let phraseIndex = 0, charIndex = 0, typing = true;
@@ -189,21 +258,20 @@
         if (charIndex < phrases[phraseIndex].length) {
           typedText.textContent += phrases[phraseIndex].charAt(charIndex);
           charIndex++;
-          setTimeout(typeLoop, 60);
+          setTimeout(typeLoop, 100);
         } else {
           typing = false;
           setTimeout(typeLoop, 1000);
         }
-      }
-      else {
+      } else {
         if (charIndex > 0) {
           typedText.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
           charIndex--;
-          setTimeout(typeLoop, 5);
+          setTimeout(typeLoop, 30);
         } else {
           typing = true;
           phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(typeLoop, 500);
+          setTimeout(typeLoop, 300);
         }
       }
     }
@@ -221,6 +289,43 @@
       currentSlide = (currentSlide + 1) % slides.length;
       showSlide(currentSlide);
     }, 4000);
+
+    // Certificate Modal
+    const modal = document.getElementById("certificateModal");
+    const openBtn = document.getElementById("openModalBtn");
+    const closeBtn = document.getElementById("closeModalBtn");
+    const certSlides = document.querySelectorAll(".cert-slide");
+    let certIndex = 0;
+
+    function showCertSlide(index) {
+      certSlides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        slide.style.display = "none";
+      });
+      certSlides[index].classList.add("active");
+      certSlides[index].style.display = "block";
+    }
+
+    function moveCertSlide(dir) {
+      certIndex = (certIndex + dir + certSlides.length) % certSlides.length;
+      showCertSlide(certIndex);
+    }
+
+    openBtn.onclick = () => {
+      modal.style.display = "block";
+      certIndex = 0;
+      showCertSlide(certIndex);
+    };
+
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+    };
+
+    window.onclick = (e) => {
+      if (e.target == modal) {
+        modal.style.display = "none";
+      }
+    };
   </script>
 
 </body>
