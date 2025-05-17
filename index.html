@@ -143,13 +143,16 @@
   </section>
 
   <!-- Quotes -->
-  <section id="quotes">
-    <h2>Inspiring Quote</h2>
-    <blockquote>
-      “Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.”
-    </blockquote>
-    <p>– Albert Schweitzer</p>
-  </section>
+  <section id="quotes" class="quote-section">
+  <div class="quote-slider">
+    <div class="quote-slide active">
+      <p>"Success is not the key to happiness. <br> Happiness is the key to success."</p>
+    </div>
+    <div class="quote-slide">
+      <p>"If you love what you are doing, <br> you will be successful."</p>
+    </div>
+  </div>
+</section>
 
   <!-- Contact -->
   <section id="contact">
@@ -241,6 +244,22 @@
   }
 
   document.addEventListener("DOMContentLoaded", type);
+</script>
+  <script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".quote-slide");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      if (i === index) slide.classList.add("active");
+    });
+  }
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 4000); // Change slide every 4 seconds
 </script>
 </body>
 </html>
